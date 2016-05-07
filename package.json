@@ -47,6 +47,7 @@
   },
   "scripts": {
     "ban": "ban",
+    "build": "webpack",
     "deps": "deps-ok",
     "format": "standard-format -w index.js src/*.js",
     "issues": "git-issues",
@@ -67,8 +68,9 @@
     "mocha": "2.4.5",
     "nsp": "2.4.0",
     "pre-git": "3.8.3",
+    "semantic-release": "^4.3.5",
     "standard": "7.0.1",
     "standard-format": "2.1.1",
-    "semantic-release": "^4.3.5"
+    "webpack": "1.13.0"
   }
 }
