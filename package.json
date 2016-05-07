@@ -1,7 +1,7 @@
 {
   "name": "rambo-site",
   "description": "Site where Rambo finds Ramda solutions to your problems",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": "https://github.com/bahmutov/rambo-site/issues",
   "config": {
@@ -56,7 +56,8 @@
     "secure": "nsp check",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
-    "unit": "mocha src/*-spec.js"
+    "unit": "mocha src/*-spec.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "ban-sensitive-files": "1.8.2",
@@ -67,6 +68,7 @@
     "nsp": "2.4.0",
     "pre-git": "3.8.3",
     "standard": "7.0.1",
-    "standard-format": "2.1.1"
+    "standard-format": "2.1.1",
+    "semantic-release": "^4.3.5"
   }
 }
