@@ -72,5 +72,8 @@
     "standard": "7.0.1",
     "standard-format": "2.1.1",
     "webpack": "1.13.0"
+  },
+  "dependencies": {
+    "rambo": "1.2.0"
   }
 }
