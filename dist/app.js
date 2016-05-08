@@ -49,6 +49,7 @@
 	/* global CycleDOM, Cycle */
 	const {makeDOMDriver, p, div, label} = CycleDOM
 	const rambo = __webpack_require__(1)
+	const evaluate = __webpack_require__(13)
 
 	// initial input / output
 	const input = [1, 5, 3]
@@ -65,7 +66,6 @@
 	}
 
 	function intent (dom) {
-	  /* eslint-disable no-eval */
 	  const input_ = dom.select('#input')
 	    .events('blur')
 	    .map((e) => e.target.value)
@@ -73,7 +73,7 @@
 	      console.log('input source "%s"', s)
 	    })
 	    .filter(isUnempty)
-	    .map(eval)
+	    .map(evaluate)
 	    .startWith(input)
 
 	  const output_ = dom.select('#output')
@@ -83,7 +83,7 @@
 	      console.log('output source "%s"', s)
 	    })
 	    .filter(isUnempty)
-	    .map(eval)
+	    .map(evaluate)
 	    .startWith(output)
 
 	  return input_.combineLatest(output_, (i, o) => {
@@ -10694,6 +10694,19 @@
 	}
 
 	module.exports = produce
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	'use strict'
+
+	function evaluate (s) {
+	  /* eslint-disable no-eval */
+	  return eval('(' + s + ')')
+	}
+	module.exports = evaluate
 
 
 /***/ }

@@ -49,6 +49,7 @@
   "scripts": {
     "ban": "ban",
     "build": "webpack",
+    "w": "webpack --watch",
     "deps": "deps-ok",
     "format": "standard-format -w index.js src/*.js",
     "issues": "git-issues",

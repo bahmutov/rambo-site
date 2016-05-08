@@ -18,3 +18,13 @@ describe('simple solution using rambo', () => {
     la(is.unemptyString(solution.name), solution)
   })
 })
+
+describe.skip('can find item by property', () => {
+  it('finds R.find(R.propEq())', () => {
+    const i = [42, {foo: 'bar'}, 5]
+    const o = {foo: 'bar'}
+    const solution = rambo.solve(i, o)
+    la(is.object(solution), 'found solution')
+    la(is.unemptyString(solution.name), solution)
+  })
+})

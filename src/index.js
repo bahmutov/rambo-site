@@ -3,6 +3,7 @@
 /* global CycleDOM, Cycle */
 const {makeDOMDriver, p, div, label} = CycleDOM
 const rambo = require('rambo')
+const evaluate = require('./evaluate')
 
 // initial input / output
 const input = [1, 5, 3]
@@ -19,7 +20,6 @@ function isUnempty (s) {
 }
 
 function intent (dom) {
-  /* eslint-disable no-eval */
   const input_ = dom.select('#input')
     .events('blur')
     .map((e) => e.target.value)
@@ -27,7 +27,7 @@ function intent (dom) {
       console.log('input source "%s"', s)
     })
     .filter(isUnempty)
-    .map(eval)
+    .map(evaluate)
     .startWith(input)
 
   const output_ = dom.select('#output')
@@ -37,7 +37,7 @@ function intent (dom) {
       console.log('output source "%s"', s)
     })
     .filter(isUnempty)
-    .map(eval)
+    .map(evaluate)
     .startWith(output)
 
   return input_.combineLatest(output_, (i, o) => {
