@@ -10,6 +10,7 @@
       "pre-commit": [
         "npm run deps",
         "npm test",
+        "npm run build",
         "npm run ban"
       ],
       "pre-push": [
@@ -74,6 +75,6 @@
     "webpack": "1.13.0"
   },
   "dependencies": {
-    "rambo": "1.2.0"
+    "rambo": "1.4.0"
   }
 }
